@@ -23,16 +23,16 @@
     </a-scene>
   </body>
   
-  <!--script>
+  <script>
     
     function play(id){
       var aVideoAsset = document.querySelector('#' + id);
-      aVideoAsset.play().catch(function (error) {
+      <!--aVideoAsset.play().catch(function (error) {
         aVideoAsset.pause();
         hideOrShow("playButton");
 
-      });
-      aVideoAsset.setAttribute('loop', 'false');
+      });-->
+      <!--aVideoAsset.setAttribute('loop', 'false');-->
       hideOrShow('playButton');
     }
     function hideOrShow(id) {
@@ -43,7 +43,7 @@
     x.style.display = "none";
   }
 } 
-  </script-->
+  </script>
   
   <script>
     window.onload = function() {
@@ -51,7 +51,7 @@
             init: function () {
                 var marker = this.el;
 
-                this.vid = document.querySelector("#vid");
+                this.vid = document.querySelector("#alpha");
 
                 marker.addEventListener('markerFound', function () {
                     this.vid.play();
