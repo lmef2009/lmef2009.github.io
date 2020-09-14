@@ -1,51 +1,9 @@
-<html>
-  <head>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <!-- <script src="aframe-ar.js"></script> use this (v1.6) if this demo ever breaks-->
-  </head>
-  <body>
-    <a id="playButton" onclick="play('alpha')"><div class="btn btn-primary play-overlay menu-overlay"></div></a>
-    <a-scene >
-      <a-assets>
-        <video id="alpha" autoplay loop="true" src="https://simpl.info/videoalpha/video/dancer1.webm"></video>
-      </a-assets>
-      <!-- Using the asset management system. -->
-      
-      <a-marker-camera type='pattern' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/lmef2009/Imagenes/master/pattern-Pat_Galardon.patt'>
-      <!--a-marker-camera preset='hiro'-->
-      <!--a-marker id="animated-marker" type='barcode' value='6'-->
-        <a-video id = "vid"  rotation =  "-62.584 -3.936 4.509"  scale="5 5 1" src="#alpha">
-          <video scale= "20 20 1" src="#source"></video></a-video>
-      </a-marker-camera>
-    </a-scene>
-  </body>
-  
-  <script>
-    
-    function play(id){
-      var aVideoAsset = document.querySelector('#' + id);
-      <!--aVideoAsset.play().catch(function (error) {
-        aVideoAsset.pause();
-        hideOrShow("playButton");
-
-      });-->
-      <!--aVideoAsset.setAttribute('loop', 'false');-->
-      hideOrShow('playButton');
-    }
-    function hideOrShow(id) {
-  var x = document.getElementById(id);
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-} 
-  </script>
-  
-  <script>
+	<script>
     window.onload = function() {
         AFRAME.registerComponent('videohandler', {
             init: function () {
@@ -65,4 +23,75 @@
         });
     };
 </script>
-</html> 
+	  
+<style>
+    .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .arjs-loader div {
+        text-align: center;
+        font-size: 1.25em;
+        color: white;
+    }
+</style>
+  <body style='margin : 0px; overflow: hidden;'>
+    <div class="arjs-loader">
+        <div>Loading, please wait...</div>
+    </div>
+	  
+    <a-scene 
+	vr-mode-ui="enabled: false;"
+        renderer='antialias: true; alpha: true; precision: mediump;'
+        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+	    
+	<a-assets>
+	   <video src="https://simpl.info/videoalpha/video/dancer1.webm"
+	       preload="auto" id="alpha"  autoplay loop="true" response-type="arraybuffer" loop
+               crossorigin webkit-playsinline autoplay muted playsinline>
+	   </video>
+        </a-assets>
+      <!-- Using the asset management system. -->
+      
+      <a-marker-camera 
+	 videohandler
+	 type='pattern' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/lmef2009/Imagenes/master/pattern-Pat_Galardon.patt'
+      >
+      <!--a-marker-camera preset='hiro'-->
+      <!--a-marker id="animated-marker" type='barcode' value='6'-->
+        <a-video id = "vid" 
+	    position='50 150 -100' 
+	    rotation =  "-62.584 -3.936 4.509"  
+	    width='300'
+            height='175'
+	    src="#alpha"
+	    >
+         </a-video>
+      </a-marker-camera>
+    </a-scene>
+  </body>
+  
+  <script>
+    
+    function play(id){
+      var aVideoAsset = document.querySelector('#' + id);      
+      hideOrShow('playButton');
+    }
+    function hideOrShow(id) {
+  var x = document.getElementById(id);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+} 
+  </script>
