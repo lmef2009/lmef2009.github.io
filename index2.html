@@ -17,6 +17,14 @@
      display: none;
   }
 </script>
+	<style>
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+</style>
 </head>
      <!-- <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>	  
      <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -42,12 +50,10 @@
     };
   </script>	  
   <body>
-	  <button type="button" id="btnInscrip" style="display: none;">Inscribirse</button>
-	  <script type="text/javascript">
-		  document.getElementById("btnInscrip").onclick = function () {
-			  location.href = "https://youtu.be/dQw4w9WgXcQ";
-		  };
-	  </script>
+	  <div class="center">
+		  <button type="button" id="btnInscrip" style="display: none;">Inscribirse</button>
+	  </div>  
+	
     <a-scene>	    
 	<a-assets>
 	   <video id="alpha" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/lmef2009/Imagenes/master/demo_1.webm" preload="auto" response-type="arraybuffer" loop="true" crossorigin webkit-playsinline autoplay="true" muted="false" playsinline></video>
@@ -63,14 +69,12 @@
     </a-scene>
   </body>
   
-  <script>
-    
+  <script>    
     function play(id){
       var aVideoAsset = document.querySelector('#' + id);  
       aVideoAsset.play().catch(function (error) {
         aVideoAsset.pause();
         hideOrShow("playButton");
-
       });
       aVideoAsset.setAttribute('loop', 'false');
       hideOrShow('playButton');
@@ -83,5 +87,11 @@
     x.style.display = "none";
   }
 }
-  </script>	
+</script>	
+	  
+  <script type="text/javascript">
+	document.getElementById("btnInscrip").onclick = function () {
+	  location.href = "https://youtu.be/dQw4w9WgXcQ";
+	  };
+   </script>
 </html>
