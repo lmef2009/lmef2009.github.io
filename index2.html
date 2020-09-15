@@ -33,24 +33,14 @@
 	  
     <a-scene>	    
 	<a-assets>
-	   <video src="https://simpl.info/videoalpha/video/dancer1.webm"
-	       preload="auto" id="alpha"  autoplay loop="true" response-type="arraybuffer" loop
-               crossorigin webkit-playsinline autoplay muted playsinline>
-	   </video>
+	   <video id="alpha" autoplay loop="true" src="https://simpl.info/videoalpha/video/dancer1.webm" preload="auto" response-type="arraybuffer" loop crossorigin></video>
         </a-assets>
       <!-- Using the asset management system. -->
       
       <a-marker-camera type='pattern' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/lmef2009/Imagenes/master/pattern-Pat_Galardon.patt'>
       <!--a-marker-camera preset='hiro'-->
       <!--a-marker id="animated-marker" type='barcode' value='6'-->
-        <a-video id = "vid" 
-	    position='50 150 -100' 
-	    rotation =  "-62.584 -3.936 4.509"  
-	    width='300'
-            height='175'
-	    src="#alpha"
-	    >
-         </a-video>
+        <a-video id = "vid" position='50 150 -100' width='300' height='175' src="#alpha"></a-video>
       </a-marker-camera>
     </a-scene>
   </body>
