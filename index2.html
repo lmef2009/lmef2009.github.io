@@ -64,15 +64,13 @@
 	    
 	<script>
 	   document.getElementById("proceed").style.display = "none";
+	   function showStuff() {
+              document.getElementById("proceed").style.display = "inline";
+           }
 		
 	   var vid = document.getElementById("alpha");
 	   vid.onended = function() {
-		   
-	      function showStuff() {
-                 document.getElementById("proceed").style.display = "inline";
-              }
-		   
-	      setTimeout(showStuff, 1000);
+	      showStuff;
 	   };
 	 </script>
 	    
