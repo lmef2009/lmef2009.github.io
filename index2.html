@@ -70,11 +70,12 @@
 	      function showStuff() {
                  document.getElementById("proceed").style.display = "inline";
               }
+	      setTimeout(showStuff, 0);
 	   };
 	 </script>
 	    
 	<a-assets>
-	   <video id="alpha" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/lmef2009/Imagenes/master/demo_1.webm" preload="auto" response-type="arraybuffer" loop="true" crossorigin webkit-playsinline autoplay="true" muted="false" playsinline></video>
+	   <video id="alpha" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/lmef2009/Imagenes/master/demo_1.webm" preload="auto" response-type="arraybuffer" loop="false" crossorigin webkit-playsinline autoplay="true" muted="false" playsinline></video>
         </a-assets>    	 
       
       <a-marker-camera type='pattern' videohandler url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/lmef2009/Imagenes/master/pattern-Pat_Galardon.patt'
