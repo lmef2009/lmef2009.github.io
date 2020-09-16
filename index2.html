@@ -7,25 +7,6 @@
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script>
-  var i = 4;
-  var time = $("#time")
-  var timer = setInterval(function() {
-    time.html(i);
-    if (i == 0) {
-      $("#proceed").show();
-      clearInterval(timer);
-
-    }
-    i--;
-  }, 1000)
-</script>
-	
-<script>
-  #proceed {
-     display: none;
-  }
-</script>
 <style>
   .center {
      height: 100%;
@@ -86,5 +67,24 @@
 	document.getElementById("proceed").onclick = function () {
 	  location.href = "https://youtu.be/dQw4w9WgXcQ";
 	  };
-   </script>
+  </script>	
+  <script>
+  #proceed {
+     display: none;
+  }
+</script>
+	
+<script>
+  var i = 4;
+  var time = $("#time")
+  var timer = setInterval(function() {
+    time.html(i);
+    if (i == 0) {
+      $("#proceed").show();
+      clearInterval(timer);
+
+    }
+    i--;
+  }, 1000)
+</script>
 </html>
