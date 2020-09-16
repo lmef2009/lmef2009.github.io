@@ -56,7 +56,7 @@
 	<script>
 	   document.getElementById("proceed").style.display = "none";
 		
-	   document.getElementById("alpha").onended = function() {showStuff()};	
+	   document.getElementById("alpha").onended = function() {setTimeout(showStuff,1000)};	
 		
 	   function showStuff() {	      
               document.getElementById("proceed").style.display = "inline";
