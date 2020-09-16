@@ -47,7 +47,20 @@
         renderer='antialias: true; alpha: true; precision: mediump;'
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 	
-	<div class="center"><button type="button" id="proceed">proceed</button></div>
+	<div class="center"><button type="button" id="proceed"> Inscribirse </button></div>
+	<script>
+          document.getElementById("proceed").style.display = "none";
+
+          function showStuff() {
+            document.getElementById("proceed").style.display = "inline";
+          }
+		
+          function myFunction() {
+            window.location = "project.html"
+          }
+		
+          setTimeout(showStuff, 20000);
+        </script>
 	    
 	<a-assets>
 	   <video id="alpha" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/lmef2009/Imagenes/master/demo_1.webm" preload="auto" response-type="arraybuffer" loop="true" crossorigin webkit-playsinline autoplay="true" muted="false" playsinline></video>
@@ -72,19 +85,5 @@
   #proceed {
      display: none;
   }
-</script>
-	
-<script>
-  var i = 4;
-  var time = $("#time")
-  var timer = setInterval(function() {
-    time.html(i);
-    if (i == 0) {
-      $("#proceed").show();
-      clearInterval(timer);
 
-    }
-    i--;
-  }, 1000)
-</script>
 </html>
