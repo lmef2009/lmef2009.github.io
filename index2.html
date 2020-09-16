@@ -61,23 +61,29 @@
 		
           setTimeout(showStuff, 20000);
         </script-->
-	    
 	<script>
 	   document.getElementById("proceed").style.display = "none";
-	   function showStuff() {
+		
+	   function showStuff() {	      
               document.getElementById("proceed").style.display = "inline";
            }
 		
-	   var vid = document.getElementById("alpha");
-	   vid.onended = function() {
-	      showStuff;
+           function myFunction() {
+              window.location = "index2.html"
+           }
+	</script>
+	    
+	<script>
+	   var vid = document.getElementById("myVideo");
+	      vid.onended = function() {
+	         showStuff;
 	   };
 	 </script>
 	    
 	<a-assets>
 	   <video id="alpha" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/lmef2009/Imagenes/master/demo_1.webm" preload="auto" response-type="arraybuffer" loop="false" crossorigin webkit-playsinline autoplay="true" muted="false" playsinline></video>
         </a-assets>    	 
-      
+      <video id="myVideo" src="https://github.com/lmef2009/Imagenes/blob/master/demo_1.webm></video>
       <a-marker-camera type='pattern' videohandler url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/lmef2009/Imagenes/master/pattern-Pat_Galardon.patt'
        smooth="true" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5">
       <!--a-marker-camera preset='hiro'-->
